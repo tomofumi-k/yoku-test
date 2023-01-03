@@ -1,20 +1,24 @@
 import React, { useState } from 'react';
-import jsonplaceholder from './A-test/jsonplaceholder.js';
+import axios from 'axios';
 import Button from './A-test/button';
-import Resouces from './A-test/resouce';
+import Resources from './A-test/resource';
 import './A-test/a-section.scss';
 
 const App =()=>{
-  const [resouces, setResouces] = useState([]);
+  const [resources, setResouces] = useState([]);
+  try {
+  }catch(err) {
+    console.log(err);
+  };
 
-  const getfacts = async ()=> {
-    const facts =await jsonplaceholder.get('https://catfact.ninja/fact');
+  const getFacts = async ()=> {
+    const facts = await axios.get('https://catfact.ninja/fact');
     setResouces(facts.data);
   }
   return (
     <div className=''>
-    <Button className="a-button" onClick={getfacts} text='更新' />
-    <Resouces resouces = {resouces} />
+    <Button className="a-button" onClick={getFacts} text='更新' />
+    <Resources resources = {resources} />
     </div>
   )
 }
