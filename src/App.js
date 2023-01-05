@@ -1,26 +1,26 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import Button from './A-test/button';
-import Resources from './A-test/resource';
-import './A-test/a-section.scss';
+import React, { useState } from "react";
+import Button from "./A-test/button";
+import craftNinja from "./A-test/axiosCraftNinja";
+import "./A-test/a-section.scss";
 
-const App =()=>{
-  const [resources, setResouces] = useState([]);
-  try {
-  }catch(err) {
-    console.log(err);
+const App = () => {
+  const [resources, setResources] = useState([]);
+
+  const getFacts = async () => {
+    try {
+      const facts = await craftNinja.get("/fact");
+      setResources(facts.data);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
-  const getFacts = async ()=> {
-    const facts = await axios.get('https://catfact.ninja/fact');
-    setResouces(facts.data);
-  }
   return (
-    <div className=''>
-    <Button className="a-button" onClick={getFacts} text='更新' />
-    <Resources resources = {resources} />
+    <div className="a-section">
+      <p key={resources.fact}>{resources.fact}</p>
+      <Button className="a-button" onClick={getFacts} text="更新" />
     </div>
-  )
-}
+  );
+};
 
 export default App;
