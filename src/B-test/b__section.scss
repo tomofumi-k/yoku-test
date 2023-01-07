@@ -4,42 +4,50 @@ $bsection-main-color: #13017b;
 $from-height: 40px;
 
 .bsection {
-  padding: 24px;
   width: 100vw;
   height: 100vh;
   margin: 0 auto;
+  padding: 24px;
   color: $bsection-main-color;
 
   .bsection__input--form {
     display: flex;
+    gap: 8px;
     justify-content: space-between;
     width: 400px;
     margin-bottom: 48px;
-    gap: 8px;
+
     .bsection__input {
+      width: 100%;
       height: $from-height;
       border: 1px solid $bsection-main-color;
-      width: 100%;
     }
+
     .bsection__button {
       height: $from-height;
-      padding: 0px 16px;
+      padding: 0 16px;
       color: $white;
-      background-color: $bsection-main-color;
       white-space: nowrap;
+      background-color: $bsection-main-color;
     }
   }
 
-  .todo__input--text {
+  .todo__input--container {
     width: 400px;
-    padding: 24px;
-    border: 1px solid #13017b;
-    color: $black;
+    height: 56px;
     margin-top: 8px;
+    color: $black;
+    border: 1px solid #13017b;
   }
-  .todo__input--check {
-    background-color: $bsection-main-color;
-    width: 24px;
+
+  .todo__deletebutton {
+    width: 50px;
     height: 100%;
+    margin-right: 16px;
+    padding: 8px;
+    color: $white;
+    white-space: nowrap;
+    text-align: center;
+    background-color: $bsection-main-color;
   }
 }

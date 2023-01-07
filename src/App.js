@@ -5,18 +5,19 @@ import "./base.scss";
 import "./B-test/b__section.scss";
 
 function App() {
+  // デフォルトのリスト雛形
   const [todos, setTodos] = useState([
-    { id: 1, name: "Apple", completed: false },
-    { id: 2, name: "grape", completed: false },
-    { id: 2, name: "Strawberry", completed: false },
+    { id: 1, name: "Apple", removed: false },
+    { id: 2, name: "grape", removed: false },
+    { id: 3, name: "Strawberry", removed: false },
   ]);
 
+  // 追加ボタンで入力された文字をTodoリストに追加
   const todoNameRef = useRef();
-
   const handleAddTodo = (e) => {
     const name = todoNameRef.current.value;
     setTodos((prevTodos) => {
-      return [...prevTodos, { id: uuidv4(), name: name, completed: false }];
+      return [...prevTodos, { id: uuidv4(), name: name, removed: false }];
     });
     todoNameRef.current.value = null;
   };
