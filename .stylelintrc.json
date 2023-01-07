@@ -1,0 +1,39 @@
+{
+  "plugins": [
+    "stylelint-scss",
+    "stylelint-prettier"
+  ],
+
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-rational-order"
+  ],
+
+  "rules": {
+    "selector-class-pattern": null,
+    "selector-id-pattern": null,
+    "color-hex-case": "lower", 
+    "color-hex-length": "short",
+    "indentation": 2,
+    "number-leading-zero": "always",
+    "string-quotes": "double",
+    "no-descending-specificity":null,
+    "at-rule-no-unknown":                     [true, { "message": "未知の@規則があります","ignoreAtRules": ["include","mixin","each", "use", "forward"]}],
+    "block-no-empty":                         [true, { "message": "空のブロックがあります" }],
+    "declaration-no-important":               [true, { "message": "!importantは使用しないでください" }],
+    "color-no-invalid-hex":                   [true, { "message": "16進数ではないカラーがあります" }],
+    "comment-no-empty":                       [true, { "message": "空のコメントがあります" }],
+    "font-family-no-duplicate-names":         [true, { "message": "フォントファミリー名が重複しています" }],
+    "keyframe-declaration-no-important":      [true, { "message": "ブロック内で重複するセレクターがあります" }],
+    "max-nesting-depth":                      [6   , { "message": "ネストが深いので見直してください" }],
+    "media-feature-name-no-unknown":          [true, { "message": "不明なメディア機能名があります" }],
+    "no-duplicate-selectors":                 [true, { "message": "スタイルシート内で重複するセレクターがあります" }],
+    "no-irregular-whitespace":                [true, { "message": "空白が不規則です" }],
+    "no-empty-source":                        [true, { "message": "空のソースがあります" }],
+    "selector-type-no-unknown":               [true, { "message": "不明なタイプのセレクターがあります" }],
+    "shorthand-property-no-redundant-values": [true, { "message": "冗長な記述があります" }],
+    "value-no-vendor-prefix":                 [true, { "message": "ベンダープレフィックスがあります" }]
+  }
+}
+
+
