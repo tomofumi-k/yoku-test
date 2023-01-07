@@ -1,15 +1,14 @@
-import React from 'react'
+import React from "react";
 
-const Todo = ({todo}) => {
+const Todo = ({ todo }) => {
   return (
-    <div>
+    <div className="todo__input--text">
       <label>
-        <input type="checkbox" checked={todo.completed} readOnly />
+        <input className="todo__input--check" type="checkbox" checked={todo.completed} readOnly />
       </label>
       {todo.name}
     </div>
-    );
-  };
-    
+  );
+};
 
-    export default Todo;
+export default Todo;

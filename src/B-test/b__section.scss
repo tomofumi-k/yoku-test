@@ -1,0 +1,45 @@
+$white: white;
+$black: black;
+$bsection-main-color: #13017b;
+$from-height: 40px;
+
+.bsection {
+  padding: 24px;
+  width: 100vw;
+  height: 100vh;
+  margin: 0 auto;
+  color: $bsection-main-color;
+
+  .bsection__input--form {
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
+    margin-bottom: 48px;
+    gap: 8px;
+    .bsection__input {
+      height: $from-height;
+      border: 1px solid $bsection-main-color;
+      width: 100%;
+    }
+    .bsection__button {
+      height: $from-height;
+      padding: 0px 16px;
+      color: $white;
+      background-color: $bsection-main-color;
+      white-space: nowrap;
+    }
+  }
+
+  .todo__input--text {
+    width: 400px;
+    padding: 24px;
+    border: 1px solid #13017b;
+    color: $black;
+    margin-top: 8px;
+  }
+  .todo__input--check {
+    background-color: $bsection-main-color;
+    width: 24px;
+    height: 100%;
+  }
+}
