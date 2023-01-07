@@ -16,9 +16,11 @@ const App = () => {
   };
 
   return (
-    <div className="a-section">
-      <p key={resources.fact}>{resources.fact}</p>
-      <Button className="a-button" onClick={getFacts} text="更新" />
+    <div className="a__section">
+      <div className="a__section--container">
+        <p className="a__txt" key={resources.fact}>{resources.fact}</p>
+        <Button className="a__button" onClick={getFacts} text="更新" />
+      </div>
     </div>
   );
 };
