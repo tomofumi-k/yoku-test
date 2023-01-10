@@ -1,7 +1,24 @@
-$bsection-main-color: #13017b;
+$white: white;
+$csection-main-color: #13017b;
 
-.c-list {
-  width: 400px;
-  padding: 24px;
-  border: 1px solid $bsection-main-color;
+.c__list {
+  width: 320px;
+  height: 400px;
+  padding: 32px;
+  border: 1px solid $csection-main-color;
+
+  .c__list--text {
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+    text-align: center;
+    list-style: none;
+    border-bottom: 1px solid $csection-main-color;
+  }
+}
+
+.c__list--button {
+  padding: 8px 24px;
+  color: $white;
+  text-align: center;
+  background: $csection-main-color;
 }

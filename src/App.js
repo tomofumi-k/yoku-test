@@ -3,7 +3,7 @@ import { List } from "./C-test/List";
 import "./C-test/c-test.scss";
 
 function App() {
-  const [fruits, setfruits] = useState([
+  const [fruitsList, setfruitsList] = useState([
     { id: 1, name: "Apple" },
     { id: 2, name: "grape" },
     { id: 3, name: "Strawberry" },
@@ -14,7 +14,12 @@ function App() {
     { id: 8, name: "Peach" },
   ]);
 
-  return <List fruits={fruits} setfruits={setfruits} />;
+  return (
+    <>
+      <List fruitsList={fruitsList} setfruitsList={setfruitsList} />
+      <button className="c__list--button">右へ移動</button>
+    </>
+  );
 }
 
 export default App;

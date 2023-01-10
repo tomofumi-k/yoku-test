@@ -1,9 +1,13 @@
 import React from "react";
 
-export const List = (fruits) => {
+export const List = ({ fruitsList, setfruitsList }) => {
   return (
-    <ul className="c-list">
-      <li className="">{fruits.name}</li>
+    <ul className="c__list">
+      {fruitsList.map((fruits, index) => (
+        <li className="c__list--text" key={index}>
+          {fruits.name}
+        </li>
+      ))}
     </ul>
   );
 };
