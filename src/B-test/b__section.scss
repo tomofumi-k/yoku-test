@@ -4,8 +4,11 @@ $bsection-main-color: #13017b;
 $from-height: 40px;
 
 .bsection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 100vw;
-  height: 100vh;
   margin: 0 auto;
   padding: 24px;
   color: $bsection-main-color;
@@ -33,6 +36,9 @@ $from-height: 40px;
   }
 
   .todo__input--container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
     width: 400px;
     height: 56px;
     margin-top: 8px;
@@ -41,6 +47,9 @@ $from-height: 40px;
   }
 
   .todo__deletebutton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 50px;
     height: 100%;
     margin-right: 16px;
