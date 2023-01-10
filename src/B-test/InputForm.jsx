@@ -1,5 +1,6 @@
+// 追加するフォームのコンポーネント
 import React, { useState } from "react";
-
+import { v4 as uuidv4 } from "uuid";
 export const InputForm = ({ taskList, setTaskList }) => {
   const [inputText, setInputText] = useState("");
 
@@ -8,7 +9,7 @@ export const InputForm = ({ taskList, setTaskList }) => {
     setTaskList([
       ...taskList,
       {
-        id: taskList.length,
+        id: uuidv4(),
         text: inputText,
       },
     ]);

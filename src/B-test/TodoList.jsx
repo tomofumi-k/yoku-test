@@ -1,3 +1,4 @@
+// 追加されるTodoのコンポーネント
 import React from "react";
 
 export const TodoList = ({ taskList, setTaskList }) => {
