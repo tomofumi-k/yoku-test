@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { List } from "./C-test/List";
+import "./base.scss";
 import "./C-test/c-test.scss";
 
 function App() {
