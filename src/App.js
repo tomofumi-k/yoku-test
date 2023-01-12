@@ -16,10 +16,10 @@ function App() {
   ]);
 
   return (
-    <>
+    <div className="c-section">
       <List fruitsList={fruitsList} setfruitsList={setfruitsList} />
       <button className="c__list--button">右へ移動</button>
-    </>
+    </div>
   );
 }
 
