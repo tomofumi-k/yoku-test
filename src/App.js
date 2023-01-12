@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { List } from "./C-test/List";
+import { ListItems } from "./C-test/ListItems";
 import "./base.scss";
 import "./C-test/c-test.scss";
 
@@ -18,7 +19,7 @@ function App() {
   return (
     <div className="c-section">
       <List fruitsList={fruitsList} setfruitsList={setfruitsList} />
-      <button className="c__list--button">右へ移動</button>
+      <ListItems fruitsList={fruitsList} setfruitsList={setfruitsList} />
     </div>
   );
 }
