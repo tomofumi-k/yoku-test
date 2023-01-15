@@ -5,25 +5,32 @@ import "./base.scss";
 import "./C-test/c-test.scss";
 
 function App() {
-  const [fruitsList, setfruitsList] = useState([
-    { id: 1, name: "Apple" },
-    { id: 2, name: "grape" },
-    { id: 3, name: "Strawberry" },
-    { id: 4, name: "Cherry" },
-    { id: 5, name: "Plum" },
-    { id: 6, name: "Watermelon" },
-    { id: 7, name: "Banana" },
-    { id: 8, name: "Peach" },
+  const [fruitsListA, setFruitsListA] = useState([
+    { id: 1, name: "Apple", checked: "false" },
+    { id: 2, name: "grape", checked: "false" },
+    { id: 3, name: "Strawberry", checked: "false" },
+    { id: 4, name: "Cherry", checked: "false" },
+    { id: 5, name: "Plum", checked: "false" },
   ]);
+  const [fruitsListB, setFruitsListB] = useState([
+    { id: 6, name: "Watermelon", checked: "false" },
+    { id: 7, name: "Banana", checked: "false" },
+    { id: 8, name: "Peach", checked: "false" },
+  ]);
+
+  const FunctionButtonA = (e) => {
+    console.log("ボタンAクリック");
+  };
+  const FunctionButtonB = (e) => {
+    console.log("ボタンBクリック");
+  };
 
   return (
     <div className="c-section">
-      <List fruitsList={fruitsList} setfruitsList={setfruitsList} />
-      <ListItems fruitsList={fruitsList} setfruitsList={setfruitsList} />
+      <List fruitsListA={fruitsListA} setFruitsListA={setFruitsListA} FunctionButtonA={FunctionButtonA} />
+      <ListItems fruitsListB={fruitsListB} setFruitsListB={setFruitsListB} FunctionButtonB={FunctionButtonB} />
     </div>
   );
 }
 
 export default App;
-
-// 真偽値でコンテナ内の要素に対して削除と追加を行う

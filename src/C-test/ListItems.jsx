@@ -1,19 +1,19 @@
 import React from "react";
-import Button from "./Button";
 
-export const ListItems = ({ fruitsList, setfruitsList }) => {
+export const ListItems = ({ fruitsListB, setfruitsListB, FunctionButtonB }) => {
   return (
     <div className="c__container">
       <ul className="c__list">
-        {fruitsList
-          .filter((fruitsList) => 6 <= fruitsList.id)
-          .map((fruits, index) => (
-            <li className="c__list--text" key={index}>
-              {fruits.name}
-            </li>
-          ))}
+        {fruitsListB.map((fruits, index) => (
+          <label className="c__list--text" key={index}>
+            <input type="checkbox" checked={fruitsListB.checked} />
+            {fruits.name}
+          </label>
+        ))}
       </ul>
-      <Button buttonName={"左へ移動"} />
+      <button className="c__list--button" onClick={FunctionButtonB}>
+        左へ移動
+      </button>
     </div>
   );
 };
