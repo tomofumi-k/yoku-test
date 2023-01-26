@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import { List } from "./C-test/List";
-import { ListItems } from "./C-test/ListItems";
-import "./base.scss";
-import "./C-test/c-test.scss";
+import { List } from "./List";
+import { ListItems } from "./ListItems";
+import "./c-test.scss";
 
-function App() {
+function CtestApp() {
   const [fruitsList, setFruitsList] = useState([
     { id: 1, name: "Apple", checked: "false" },
     { id: 2, name: "grape", checked: "false" },
@@ -40,4 +39,4 @@ function App() {
   );
 }
 
-export default App;
+export default CtestApp;
