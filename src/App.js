@@ -5,18 +5,25 @@ import "./base.scss";
 import "./C-test/c-test.scss";
 
 function App() {
-  const [fruitsListA, setFruitsListA] = useState([
+  const [fruitsList, setFruitsList] = useState([
     { id: 1, name: "Apple", checked: "false" },
     { id: 2, name: "grape", checked: "false" },
     { id: 3, name: "Strawberry", checked: "false" },
     { id: 4, name: "Cherry", checked: "false" },
     { id: 5, name: "Plum", checked: "false" },
-  ]);
-  const [fruitsListB, setFruitsListB] = useState([
     { id: 6, name: "Watermelon", checked: "false" },
     { id: 7, name: "Banana", checked: "false" },
     { id: 8, name: "Peach", checked: "false" },
   ]);
+
+  const deleteFruits = () => {
+    setFruitsList(
+      // // 追加
+      // setFruitsList([...fruitsList, fruitsList.id]),
+      // 削除
+      fruitsList.filter((fruitsList) => !fruitsList.completed)
+    );
+  };
 
   const FunctionButtonA = (e) => {
     console.log("ボタンAクリック");
@@ -27,8 +34,8 @@ function App() {
 
   return (
     <div className="c-section">
-      <List fruitsListA={fruitsListA} setFruitsListA={setFruitsListA} FunctionButtonA={FunctionButtonA} />
-      <ListItems fruitsListB={fruitsListB} setFruitsListB={setFruitsListB} FunctionButtonB={FunctionButtonB} />
+      <List fruitsList={fruitsList} setFruitsListA={setFruitsList} FunctionButtonA={deleteFruits} />
+      <ListItems fruitsList={fruitsList} setFruitsListB={setFruitsList} FunctionButtonB={FunctionButtonB} />
     </div>
   );
 }
