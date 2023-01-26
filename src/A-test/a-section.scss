@@ -5,11 +5,19 @@
   width: 400px;
   height: 100vh;
   margin: 0 auto;
+  color: #000;
 
   .a__section--container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
+  }
+
+  .a__button {
+    margin-top: 16px;
+    padding: 8px 24px;
+    border: 1px solid #000;
+    border-radius: 4px;
   }
 }

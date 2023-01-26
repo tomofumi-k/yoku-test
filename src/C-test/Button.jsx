@@ -1,11 +1,5 @@
 import React from "react";
 
-const Button = ({ buttonName, FunctionButtonB }) => {
-  return (
-    <button className="c__list--button" onClick={FunctionButtonB}>
-      {buttonName}
-    </button>
-  );
+export const Button = (props) => {
+  return <button className="c__list--button">{props.buttonName}</button>;
 };
-
-export default Button;
