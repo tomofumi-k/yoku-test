@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { InputForm } from "./B-test/InputForm";
-import { TodoList } from "./B-test/TodoList";
-import "./B-test/b__section.scss";
+import { InputForm } from "./InputForm";
+import { TodoList } from "./TodoList";
+import "../base.scss";
+import "./b__section.scss";
 
-function App() {
+function BtestApp() {
   const [taskList, setTaskList] = useState([
     { id: 1, text: "Apple" },
     { id: 2, text: "grape" },
@@ -18,4 +19,4 @@ function App() {
   );
 }
 
-export default App;
+export default BtestApp;
