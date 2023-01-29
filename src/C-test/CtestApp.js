@@ -1,47 +1,75 @@
 import React, { useState } from "react";
-import { List } from "./List";
-import { ListItems } from "./ListItems";
 import "./c-test.scss";
-import { Button } from "./Button";
 
 function CtestApp() {
+  // 元となる配列
+  // filter,mapで分割するよりコードも短くて分かりやすいから変更
   const [fruitsListA, setFruitsListA] = useState([
-    { id: 1, name: "Apple", checked: "false" },
-    { id: 2, name: "grape", checked: "false" },
-    { id: 3, name: "Strawberry", checked: "false" },
-    { id: 4, name: "Cherry", checked: "false" },
-    { id: 5, name: "Plum", checked: "false" },
-  ]);
-  const [fruitsListB, setFruitsListB] = useState([
-    { id: 6, name: "Watermelon", checked: "false" },
-    { id: 7, name: "Banana", checked: "false" },
-    { id: 8, name: "Peach", checked: "false" },
+    { id: 1, name: "Apple", checked: false },
+    { id: 2, name: "grape", checked: false },
+    { id: 3, name: "Strawberry", checked: false },
+    { id: 4, name: "Cherry", checked: false },
+    { id: 5, name: "Plum", checked: false },
   ]);
 
+  const [fruitsListB, setFruitsListB] = useState([
+    { id: 6, name: "Watermelon", checked: false },
+    { id: 7, name: "Banana", checked: false },
+    { id: 8, name: "Peach", checked: false },
+  ]);
+
+  // ---------------------------------------------------------------------------------------------
+
   const someClickFunctionA = () => {
-    // const newFruitsList = fruitsListA.filter((fruits) => !fruits.checked);
-    // setFruitsListA(newFruitsList);
-    console.log(fruitsListA.checked);
+    // fruitsListAにfilterでtrueだけ取得。checkの入ってるものだけfruitsという変数に格納する
+    const checkedFruits = fruitsListA.filter((fruits) => fruits.checked === true);
+
+    // fruitsListB の末に checkedFruits を追加する
+    setFruitsListB([...fruitsListB, ...checkedFruits]);
+
+    // fruitsListA にfilterで!== でtrueの付いてるものをフィルタリングする
+    setFruitsListA(fruitsListA.filter((fruits) => fruits.checked !== true));
   };
+
   const someClickFunctionB = () => {
-    // const newFruitsList = fruitsListA.filter((fruits) => !fruits.checked);
-    // setFruitsListA(newFruitsList);
-    console.log(fruitsListB.checked);
+    const checkedFruits = fruitsListB.filter((fruits) => fruits.checked === true);
+    setFruitsListA([...fruitsListA, ...checkedFruits]);
+    setFruitsListB(fruitsListB.filter((fruits) => fruits.checked !== true));
   };
+
+  // ---------------------------------------------------------------------------------------------
+
+  function toggleCheckbox(id, setFruitsList) {
+    setFruitsList((prevState) => prevState.map((fruits) => (fruits.id === id ? { ...fruits, checked: !fruits.checked } : fruits)));
+  }
 
   return (
     <div className="c-section">
       <div className="c__container">
         <ul className="c__list">
-          <List fruitsListA={fruitsListA} setFruitsListA={setFruitsListA} />
+          {fruitsListA.map((fruits, index) => (
+            <label className="c__list--text" key={index}>
+              <input type="checkbox" checked={fruits.checked} onChange={() => toggleCheckbox(fruits.id, setFruitsListA)} readOnly />
+              {fruits.name}
+            </label>
+          ))}
         </ul>
-        <Button buttonName="左へ移動" onClick={() => someClickFunctionA} />
+        <button className="c__list--button" onClick={someClickFunctionA}>
+          左へ移動
+        </button>
       </div>
       <div className="c__container">
         <ul className="c__list">
-          <ListItems fruitsListB={fruitsListB} setFruitsListB={setFruitsListB} />
+          {fruitsListB.map((fruits, index) => (
+            <label className="c__list--text" key={index}>
+              <input type="checkbox" checked={fruits.checked} onChange={() => toggleCheckbox(fruits.id, setFruitsListB)} readOnly />
+              {fruits.name}
+            </label>
+          ))}
         </ul>
-        <Button buttonName="右へ移動" onClick={() => someClickFunctionB} />
+        <button className="c__list--button" onClick={someClickFunctionB}>
+          右へ移動
+        </button>
       </div>
     </div>
   );
