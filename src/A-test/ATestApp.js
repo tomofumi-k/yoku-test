@@ -21,7 +21,7 @@ const App = () => {
         <p className="a__txt" key={resources.fact}>
           {resources.fact}
         </p>
-        <Button className="a__button" onClick={getFacts} text="更新" />
+        <Button onClick={getFacts} text="更新" />
       </div>
     </div>
   );
